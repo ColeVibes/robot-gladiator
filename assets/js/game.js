@@ -3,6 +3,9 @@ var playerHealth = 100;
 var playerAttack = 10;
 var palyerMoney = 10;
 
+var enemyNames = ["Roborto", "Amy Android", "Robo Rumble"];
+console.log(enemyNames.length);
+
 if (playerHealth === 0) {
     console.log("This will not run.");
 }
@@ -17,7 +20,7 @@ var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
 
-var fight = function() {
+//fight() {
 
     window.alert("Welcome to Robot Gladiators!");
     var promptFight = window.prompt("Would you like to FIGHT or SKIP this battle? Enter 'FIGHT' or 'SKIP' to choose.");
@@ -71,7 +74,7 @@ var fight = function() {
     }
     
 
-};
+//};
 
 fight();
 
