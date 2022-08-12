@@ -1,6 +1,7 @@
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
+var playerMoney = 10
 
 //logging multiple values
 console.log(playerName,playerAttack,playerHealth);
@@ -8,6 +9,7 @@ console.log(playerName,playerAttack,playerHealth);
 var enemyName = "Roborto";
 var enemyHealth = 50;
 var enemyAttack = 12;
+
 
 //created the fight function using arrow functionality, can also be written 'fight = function() {}' or 'function fight()'
 fight = () => {
@@ -49,9 +51,21 @@ fight = () => {
         } else {
             window.alert(playerName + ' still has ' + playerHealth + ' health left.');
         }
-    } else if (promptFight === 'skip' || promptFight === 'SKIP') {
-        window.alert(playerName + ' has chosen to skip the fight!');
-    } else {
+    } else if (promptFight === 'skip' || promptFight === 'SKIP') { //if player skips then run this
+
+        //confirm if player wishes to skip
+        var confirmSkip = window.confirm("Are you sure you wish to quit?");
+
+        //if yes then leave the fight
+        if (confirmSkip) {
+            window.alert(playerName + ' has chosen to skip the fight!');
+            //subtract money from player
+            playerMoney = playerMoney - 2;
+        } else { //if they decide they dont want to quit
+            fight();
+        }
+        
+    } else { //has player retype or try to choose fight or skip again
         window.alert('You need to choose a valid option. Try again!');
     }
 
