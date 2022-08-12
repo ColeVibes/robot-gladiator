@@ -1,18 +1,20 @@
+//player variables
 var playerName = window.prompt("What is your robot's name?");
 var playerHealth = 100;
 var playerAttack = 10;
 var playerMoney = 10
 
 //logging multiple values
-console.log(playerName,playerAttack,playerHealth);
+//console.log(playerName,playerAttack,playerHealth);
 
-var enemyName = "Roborto";
+//enemy variables
+var enemyNames = ["Roborto", "Amy Android", "Robo Trumble"];
 var enemyHealth = 50;
 var enemyAttack = 12;
 
 
 //created the fight function using arrow functionality, can also be written 'fight = function() {}' or 'function fight()'
-fight = () => {
+fight = (enemyName) => {
     //keep users in mind!
     //lets user know game has started
     window.alert("Welcome to Robot Gladiator!")
@@ -27,14 +29,14 @@ fight = () => {
 
         //log resulting value to console to show functionality
         console.log(
-            playerName + ' attacked ' + enemyName + '. ' + enemyName + ' now has ' + enemyHealth + ' health remaining.'
+            playerName + ' attacked ' + /*enemyName*/ + '. ' + /*enemyName*/ + ' now has ' + enemyHealth + ' health remaining.'
         );
 
         //checking enemy's hp
         if (enemyHealth <= 0) {
-            window.alert(enemyName + ' has died!');
+            window.alert(/*enemyName*/ + ' has died!');
         } else {
-            window.alert(enemyName + ' still has ' + enemyHealth + ' health left.');
+            window.alert(/*enemyName*/ + ' still has ' + enemyHealth + ' health left.');
         }
 
         //subtract 'enemyAttack' from playerHealth, then update playerHealth
@@ -42,7 +44,7 @@ fight = () => {
 
         //log result message to the console to show functionality
         console.log(
-            enemyName + ' attacked ' + playerName + '. ' + playerName + ' now has ' + playerHealth + " health remaining."
+            /*enemyName*/ + ' attacked ' + playerName + '. ' + playerName + ' now has ' + playerHealth + " health remaining."
         );
 
         //checking players health with if statement
@@ -67,10 +69,15 @@ fight = () => {
         
     } else { //has player retype or try to choose fight or skip again
         window.alert('You need to choose a valid option. Try again!');
-    }
+    };
 
     
 };
 
 //executes function fight
-fight();
+//fight();
+//console.log(enemyNames.length);
+
+for(var i = 0; i < enemyNames.length; i++) {
+    fight(enemyNames[i]);
+};
